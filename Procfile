@@ -1,1 +1,1 @@
-web: gunicorn myyoutubestore.wsgi --log-file -
+web: gunicorn MyYoutubeStore.wsgi --log-file -
