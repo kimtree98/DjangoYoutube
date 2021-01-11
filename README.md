@@ -20,9 +20,16 @@
 ### Local에서 실행 시
 ```sh
 $git clone https://github.com/kimtree98/DjangoYoutube.git
-$cd DjangoYoutube
+$cd DjangoYoutube/MyYoutubeStore/MyYoutubeStore/
 $python -m venv venv (Python 가상환경 설치)
 $pip install -r local_requirements.txt (구동에 필요한 Library 설치)
+*중요
+YoutubeAPI 키와 Django SecretKey 수정하여 사용
+DjangoYoutube/MyYoutubeStore/MyYoutubeStore/settings.py
+에서 'SECRET_KEY'와 'YOUTUBE_DATA_API_KEY' 수정 후 사용
+(참고: https://wayhome25.github.io/django/2017/07/11/django-settings-secret-key/, 
+https://developers.google.com/youtube/v3/getting-started?hl=ko)
+
 $python manage.py migrate(Django 실행시 migration 과정)
 $$python manage.py runserver --settings=MyYoutubeStore.local_settings (Local Setting 파일로 서버 구동)
 ```
