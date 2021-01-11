@@ -30,10 +30,8 @@ $$python manage.py runserver --settings=MyYoutubeStore.local_settings (Local Set
 셋팅 후 127.0.0.1:8000/video 링크로 접속 가능
 
 ### Heroku를 활용하여 호스팅 하기
-```sh
-*https://egg-money.tistory.com/115 
-참고
-```
+
+https://egg-money.tistory.com/115 참고
 
 ## 실행환경
 * Windows 10
