@@ -19,19 +19,20 @@
 
 ### Local에서 실행 시
 ```sh
-1$git clone https://github.com/kimtree98/DjangoYoutube.git
-2$cd DjangoYoutube
-3$python -m venv venv (Python 가상환경 설치)
-4$pip install -r local_requirements.txt (구동에 필요한 Library 설치)
-5$python manage.py migrate(Django 실행시 migration 과정)
-6$$python manage.py runserver --settings=MyYoutubeStore.local_settings (Local Setting 파일로 서버 구동)
+$git clone https://github.com/kimtree98/DjangoYoutube.git
+$cd DjangoYoutube
+$python -m venv venv (Python 가상환경 설치)
+$pip install -r local_requirements.txt (구동에 필요한 Library 설치)
+$python manage.py migrate(Django 실행시 migration 과정)
+$$python manage.py runserver --settings=MyYoutubeStore.local_settings (Local Setting 파일로 서버 구동)
 ```
 
 셋팅 후 127.0.0.1:8000/video 링크로 접속 가능
 
 ### Heroku를 활용하여 호스팅 하기
 ```sh
-https://egg-money.tistory.com/115 참고
+*https://egg-money.tistory.com/115 
+참고
 ```
 
 ## 실행환경
