@@ -3,7 +3,7 @@
 
 * https://youtubestorage.herokuapp.com/video
 
-##구현내용
+## 구현내용
 
   - 회원가입/로그인/로그아웃 기능 구현
   - video create/read/delete
@@ -15,9 +15,9 @@
   - 저장된 유튜브 영상의 정보 (제목, 업로더, 언어 등) 제공
 
 
-##사용법
+## 사용법
 
-###Local에서 실행 시
+### Local에서 실행 시
 ```sh
 1$git clone https://github.com/kimtree98/DjangoYoutube.git
 2$cd DjangoYoutube
@@ -29,16 +29,16 @@
 
 셋팅 후 127.0.0.1:8000/video 링크로 접속 가능
 
-###Heroku를 활용하여 호스팅 하기
+### Heroku를 활용하여 호스팅 하기
 ```sh
 https://egg-money.tistory.com/115 참고
 ```
 
-##실행환경
+## 실행환경
 * Windows 10
 * Python 3.8.1
 
-##참고 자료
+## 참고 자료
 * https://github.com/JisunParkRea/my_djangotube (Django 활용 유튜브 저장)
 * https://youtu.be/lc2KvFbbfAQ (YoutubeAPI 활용 관련)
 
