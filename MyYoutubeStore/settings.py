@@ -146,7 +146,7 @@ LOGIN_REDIRECT_URL = '/'
 
 
 #YouTube Data API v3 Key
-YOUTUBE_DATA_API_KEY = 'AIzaSyDm6XxOYEvn0YoNIRs9ZwBSCPcU4Dd5xe4'
+YOUTUBE_DATA_API_KEY = ''
 
 
 db_from_env = dj_database_url.config(conn_max_age=500)
