@@ -12,6 +12,7 @@ from .forms import VideoForm, UserForm, LoginForm
 import requests
 from django.conf import settings
 
+
 def video_list(request):
     video_list = Video.objects.select_related('author').prefetch_related('likes_user').all()
    
@@ -43,31 +44,79 @@ def video_new(request):
 def video_detail(request, pk):
     video = get_object_or_404(Video, pk=pk)
     videosinfo = get_object_or_404(Video, pk=pk)
+    captionsinfo =  get_object_or_404(Video, pk=pk)
 
     video_url ='https://www.googleapis.com/youtube/v3/videos'
+    captions_url='https://www.googleapis.com/youtube/v3/captions'
+    channelId_url='https://www.googleapis.com/youtube/v3/channels'
     params = {
         'part' : 'snippet',
         'id' : video.video_key,
         'key' : settings.YOUTUBE_DATA_API_KEY
     }
+    params2 = {
+        'part' : 'snippet',
+        'videoId' : video.video_key,
+        'key' : settings.YOUTUBE_DATA_API_KEY
+    }
+
+
 
     r=requests.get(video_url, params=params)
+    rc=requests.get(captions_url, params=params2)
+
+    
     results=(r.json()['items'])
+    results2=(rc.json()['items'])
+
 
     videosinfo=[]
+    captionsinfo=[]
+    channelsinfo=[]
     for result in results:
         video_data={
             'title' : result['snippet']['title'],
             'publishedAt': result['snippet']['publishedAt'],
             'channelTitle' : result['snippet']['channelTitle'],
-            'defaultAudioLanguage' : result['snippet']['defaultAudioLanguage']
+            'defaultAudioLanguage' : result['snippet']['defaultAudioLanguage'],
         }
+        channelId=result['snippet']['channelId']
 
         videosinfo.append(video_data)
-    print(videosinfo)
+
+
+    for result2 in results2:
+        caption_data={
+            'language' : result2['snippet']['language']
+        }
+
+        captionsinfo.append(caption_data)
+    
+    paramschannel={
+        'part' : 'snippet',
+        'id' : channelId,
+        'key' : settings.YOUTUBE_DATA_API_KEY
+    }
+
+    rch=requests.get(channelId_url, params=paramschannel)
+    resultsch=(rch.json()['items'])
+    for resultch in resultsch:
+        channel_data={
+        'country': resultch['snippet']['country']
+        }    
+        channelsinfo.append(channel_data)
+
+
+
+
+
+
+
     context = {
         'videosinfo' : videosinfo,
-        'video': video
+        'video': video,
+        'captionsinfo' : captionsinfo,
+        'channelsinfo': channelsinfo,
     }
 
     return render(request, 'video/video_detail.html', context)

@@ -87,12 +87,22 @@ TEMPLATES = [
 
 
 
-# Database
+# Database (Local 실행시)
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+##DATABASES = {
+##    'default': {
+##        'ENGINE': 'django.db.backends.sqlite3',
+##        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+##    }
+##}
+
+##DEBUG = True
+
+# Database (Heroku 업로드 후 실행 시)
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'kimtree',
         'USER': 'name',
         'PASSWORD': '',
@@ -146,7 +156,7 @@ LOGIN_REDIRECT_URL = '/'
 
 
 #YouTube Data API v3 Key
-YOUTUBE_DATA_API_KEY = ''
+YOUTUBE_DATA_API_KEY = 'AIzaSyDm6XxOYEvn0YoNIRs9ZwBSCPcU4Dd5xe4'
 
 
 db_from_env = dj_database_url.config(conn_max_age=500)

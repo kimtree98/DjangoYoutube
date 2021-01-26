@@ -62,13 +62,15 @@
     <a href="{% url 'video_detail' pk=video.id %}">
         <img src="http://img.youtube.com/vi/{{video.video_key}}/mqdefault.jpg" alt="thumbnail">
         {% for video in videosinfo %}
+        
         <h3>
             {{ video.title }}
     </a>
     </h3>
-    <h4>업로드 날짜: {{ video.publishedAt }}<br>업로더:{{ video.channelTitle }}<br>언어: {{ video.defaultAudioLanguage}}</h4>
+    <h4>업로드 날짜: {{ video.publishedAt }}<br>업로더: {{ video.channelTitle }}<br>언어: {{ video.defaultAudioLanguage}}<br>지원 자막: {% for video in captionsinfo %}{{video.language}}, {% endfor %}<br> 채널 국가: {% for video in channelsinfo %}{{video.country}} {% endfor %}</video></h4>
 </div>
 {% endfor %}
+
 
 <script>
     var tag = document.createElement('script');
