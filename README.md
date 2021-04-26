@@ -50,8 +50,8 @@ https://egg-money.tistory.com/115 참고
 * Python 3.8.1
 
 ## 참고 자료
-* https://github.com/JisunParkRea/my_djangotube (Django 활용 유튜브 저장)
-* https://youtu.be/lc2KvFbbfAQ (YoutubeAPI 활용 관련)
+* https://github.com/JisunParkRea/my_djangotube (Django 활용 사이트 구축 방법)
+* https://youtu.be/lc2KvFbbfAQ (Django에서 YoutubeAPI 활용 관련)
 
 
 
