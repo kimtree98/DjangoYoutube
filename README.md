@@ -32,7 +32,9 @@ $$python manage.py runserver --settings=MyYoutubeStore.local_settings (Local Set
 DjangoYoutube/MyYoutubeStore/MyYoutubeStore/settings.py
 ```
 <br>'SECRET_KEY'</br>와 <br>'YOUTUBE_DATA_API_KEY'</br> 수정 후 사용
-(참고: https://wayhome25.github.io/django/2017/07/11/django-settings-secret-key/, https://developers.google.com/youtube/v3/getting-started?hl=ko )
+<br>
+(참고: https://wayhome25.github.io/django/2017/07/11/django-settings-secret-key/, 
+https://developers.google.com/youtube/v3/getting-started?hl=ko )
 
 
 
